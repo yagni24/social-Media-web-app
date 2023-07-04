@@ -1,0 +1,75 @@
+.container {
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin: 50px auto 0px auto;
+    height: 71px;
+    width: 599px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0.30000001192092896px 0.30000001192092896px 7px 0px rgba(223, 223, 223, 0.10), -0.30000001192092896px -0.30000001192092896px 10px 0px rgba(223, 223, 223, 0.05);
+}
+
+.containerSec {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0px auto 50px auto;
+    flex-shrink: 0;
+    width: 599px;
+    height: 65px;
+    flex-shrink: 0;
+    background: #f4f2f2;
+}
+
+.textpost {
+    display: flex;
+    justify-content: flex-start;
+    width: 480px;
+    height: 25px;
+    padding: 12px 19px;
+    margin: auto 0px auto 20px;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 19.9px;
+    resize: none;
+    background: #EDEDED;
+    border: none;
+    outline: none;
+}
+
+.eventContainer {
+    display: flex;
+    width: 169px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 6px;
+    border-radius: 8px;
+    background: #FCFCFC;
+}
+
+textarea {
+    color: rgba(33, 33, 33, 0.77);
+    font-size: 14px;
+    font-family: 'Inter';
+}
+
+textarea::placeholder {
+    color: rgba(33, 33, 33, 0.77);
+    font-size: 18px;
+    font-family: 'Inter';
+    
+}
+
+
+
+.Avatar {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 40px;
+    width: 40px;
+    
+}

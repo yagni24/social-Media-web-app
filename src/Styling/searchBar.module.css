@@ -1,0 +1,16 @@
+.input::placeholder {
+    padding: 10px 19px;
+    color: rgba(33, 33, 33, 0.77);
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input {
+    resize: none;
+}
+.searchicon{
+    color: rgba(33, 33, 33, 0.77);
+}

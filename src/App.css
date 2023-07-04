@@ -1,6 +1,13 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Inter:regular,bold,semibold');
+
+body{
+  background-color: #e2e9f98d;
+  font-size: 20px;
+  font-family: 'inter';
 }
+/* .App {
+  text-align: center;
+} */
 
 .App-logo {
   height: 40vmin;

@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    color: #212121;
+    text-align: justify;
+    font-size: 20px;
+    font-family: 'Inter';
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0.36px;
+}
+.Avatar {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 40px;
+    width: 40px;
+    
+}
