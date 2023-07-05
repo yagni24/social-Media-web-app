@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, CardHeader } from "@mui/material";
+import React, { useState} from "react";
+// import { useDispatch, useSelector } from "react-redux";
+import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions} from "@mui/material";
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import styles from '../Styling/post.module.css'
-import { fetchData } from "../Redux/Actions/postApiAction";
+// import { fetchData } from "../Redux/Actions/postApiAction";
 import '../App.css';
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
@@ -16,12 +16,12 @@ const Post = () => {
     const handleIcon = () => {
         setIsFavorite(prevState => !prevState);
     }
-    const dispatch = useDispatch()
-    const postData = useSelector((state) => state.postData.data);
-    useEffect(() => {
-        dispatch(fetchData())
-    }, [])
-    console.log("postData:", postData);
+    // const dispatch = useDispatch()
+    // const postData = useSelector((state) => state.postData.data);
+    // useEffect(() => {
+    //     dispatch(fetchData())
+    // }, [])
+    // console.log("postData:", postData);
     return (
         <div style={{position:'absolute',top:'35%',left:'35%'}}>
             <div className={styles.card} >

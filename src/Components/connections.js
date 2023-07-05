@@ -2,12 +2,12 @@ import React from "react";
 import styles from '../Styling/connections.module.css'
 import { Typography } from "@mui/material";
 import SearchBar from "../Components/searchBar";
-import RightSideNav from "../Components/rightSidenav";
+// import RightSideNav from "../Components/rightSidenav";
 import Avatar from "@mui/material/Avatar";
-const connection = () => {
+const connection = ({addMarginTop}) => {
     return (
         <>
-            <div className={styles.container} style={{ paddingTop: '30px', display: 'flex' }}>
+            <div className={styles.container} style={{ paddingTop: '30px', display: 'flex',marginTop:addMarginTop?'58px':'0' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '30px 150px 500px', gridTemplateRows: '20px' }}>
                     <Typography style={{
                         color: '#2374E1',
@@ -158,8 +158,6 @@ const connection = () => {
                         </div>
                     </div>
                 </div>
-                <RightSideNav hasMargin={false} />
-
             </div >
         </>
     )

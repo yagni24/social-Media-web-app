@@ -3,10 +3,10 @@ import styles from "../Styling/rightSideNav.module.css";
 import { Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 
-const rightSidenav = ({hasMargin}) => {
+const rightSidenav = ({hasMarginTop,hasMarginBottom,hasMarginLeft,hasMarginRight}) => {
     return (
         <>
-            <div className={styles.container} style={{marginTop:hasMargin?'58px':'0'}}>
+            <div className={styles.container} style={{marginTop:hasMarginTop?'58px':'0', marginBottom:hasMarginBottom?'40px':'0',marginLeft:hasMarginLeft?'10px':'0px',marginRight:hasMarginRight?'25px':'0px'}}>
                 <div>
                     <Typography style={{
                         color: '#212121',

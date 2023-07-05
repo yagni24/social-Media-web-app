@@ -15,12 +15,13 @@ function NavBar() {
     const location = useLocation();
     return (
         <>
+    
                 <div className={`${styles.navheader}`} style={{ display: 'grid', gridTemplateColumns: '1fr', justifyItems: 'center' }}>
                     <ul className={`${styles.ul}`}>
                         <li className={`${styles.li}`}>
                             <div className={styles.iconButtonContainer}>
                                 <NavLink to="/homepage" activeClassName={styles.activeLink} className={styles.link}>
-                                    {location.pathname === '/homepage' || window.location.hostname === 'localhost'? (
+                                    {location.pathname === '/homepage' || window.location.pathname === '/'? (
                                         <>
                                             <HomeRoundedIcon fontSize="large" color="primary" />
                                             <hr className={styles.iconLine} />
