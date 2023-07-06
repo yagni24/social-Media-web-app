@@ -1,21 +1,26 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 // import { useDispatch, useSelector } from "react-redux";
-import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions} from "@mui/material";
+import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions } from "@mui/material";
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import styles from '../Styling/post.module.css'
 // import { fetchData } from "../Redux/Actions/postApiAction";
 import '../App.css';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import postlogo from "../images/postlogo.png";
 import postimg from "../images/postimg.png";
 import MapsUgcRoundedIcon from '@mui/icons-material/MapsUgcRounded';
 const Post = () => {
     const [isFavorite, setIsFavorite] = useState(false);
+    const [isFollow, setIsFollowed] = useState(false);
     const handleIcon = () => {
         setIsFavorite(prevState => !prevState);
     }
+    const handleStatus = () => {
+        setIsFollowed(prevState => !prevState);
+    }
+   
     // const dispatch = useDispatch()
     // const postData = useSelector((state) => state.postData.data);
     // useEffect(() => {
@@ -23,7 +28,7 @@ const Post = () => {
     // }, [])
     // console.log("postData:", postData);
     return (
-        <div style={{position:'absolute',top:'35%',left:'35%'}}>
+        <div style={{ position: 'absolute', top: '35%', left: '35%' }}>
             <div className={styles.card} >
                 <Card sx={{ maxWidth: 599 }}>
                     <CardActionArea>
@@ -38,9 +43,10 @@ const Post = () => {
                                 <Typography variant="h5" style={{ fontWeight: 'bold', fontFamily: 'Inter' }}>
                                     Indian Cricket Team
                                 </Typography>
-                                <Typography variant="subtitle1" style={{ display: 'flex', justifyContent: 'flex-start', fontFamily: 'Inter',fontSize: '12px',fontWeight: '600',letterSpacing: '0.36px',lineHeight: '16px' }}>
+                                <Typography variant="subtitle1" style={{ display: 'flex', justifyContent: 'flex-start', fontFamily: 'Inter', fontSize: '12px', fontWeight: '600', letterSpacing: '0.36px', lineHeight: '16px' }}>
                                     5h
-                                    <Link style={{ paddingLeft: '10px', fontFamily: 'Inter',textDecoration:'none',color:'#2374E1',fontSize: '12px',fontWeight: '600',letterSpacing: '0.36px',lineHeight: '16px'}}>Follow</Link>
+                                    {isFollow ? (<Typography onClick={handleStatus } style={{ paddingLeft: '10px', fontFamily: 'Inter', textDecoration: 'none', color: '#2374E1', fontSize: '12px', fontWeight: '600', letterSpacing: '0.36px', lineHeight: '16px', cursor:'pointer' }}>Followed</Typography>) : (<Typography style={{ paddingLeft: '10px', fontFamily: 'Inter', textDecoration: 'none', color: '#2374E1', fontSize: '12px', fontWeight: '600', letterSpacing: '0.36px', lineHeight: '16px',cursor:'pointer' }} onClick={handleStatus}>Follow</Typography>)}
+
                                 </Typography>
                             </div>
                         </CardContent>
@@ -52,16 +58,16 @@ const Post = () => {
                         <CardMedia component="img" height="250px" image={postimg} />
 
                     </CardActionArea>
-                    <CardActions style={{width:599,height:50}}>
-                        <div style={{display:'flex',justifyContent:'space-between'}}>
-                            {isFavorite ? (<ThumbUpOffAltIcon onClick={handleIcon} />) :
-                                (<ThumbUpIcon onClick={handleIcon} />)
+                    <CardActions style={{ width: 599, height: 50 }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            {isFavorite ? (<ThumbUpIcon onClick={handleIcon} />) :
+                                (<ThumbUpOffAltIcon onClick={handleIcon} />)
                             }
-                        <Typography style={{paddingLeft:'9px',fontFamily:'Inter',fontWeight:'bold', fontSize:'16px',paddingRight:'31px'}}>Like</Typography>
+                            <Typography style={{ paddingLeft: '9px', fontFamily: 'Inter', fontWeight: 'bold', fontSize: '16px', paddingRight: '31px' }}>Like</Typography>
                         </div>
-                        <div  style={{display:'flex',justifyContent:'space-between'}}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <MapsUgcRoundedIcon />
-                            <Typography style={{paddingLeft:'9px',fontFamily:'Inter',fontWeight:'bold', fontSize:'16px'}}>Comment</Typography>
+                            <Typography style={{ paddingLeft: '9px', fontFamily: 'Inter', fontWeight: 'bold', fontSize: '16px' }}>Comment</Typography>
                         </div>
                     </CardActions>
                 </Card>

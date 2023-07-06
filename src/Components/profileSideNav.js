@@ -126,13 +126,13 @@ const profileSideNav = () => {
                         leadingTrim: 'both',
                         textEdge: 'cap',
                         fontSize: '14px',
-                        fontFamily: 'Inter',
+
                         fontStyle: 'normal',
                         fontWeight: '400',
                         lineHeight: 'normal'
                     }}>n reprehenderit in voluptate velit esse cill</Typography>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '60px 250px', gridTemplateRows: '25px 25px', marginLeft: '20px',marginTop:'30px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '60px 250px', gridTemplateRows: '25px 25px', marginLeft: '20px', marginTop: '30px' }}>
                     <Avatar src="https://images.unsplash.com/photo-1635324236775-868d3680b65f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=692&q=80" style={{ gridRow: '1', gridColumn: '1', width: '45px', height: '45px' }} />
                     <Typography style={{ gridRow: '1', gridColumn: '2', fontFamily: 'Inter' }}>Elon Musk</Typography>
                     <Typography style={{
@@ -140,7 +140,7 @@ const profileSideNav = () => {
                         leadingTrim: 'both',
                         textEdge: 'cap',
                         fontSize: '14px',
-                        fontFamily: 'Inter',
+
                         fontStyle: 'normal',
                         fontWeight: '400',
                         lineHeight: 'normal'

@@ -10,6 +10,7 @@ function homePage() {
   return (
     <>
       <NavBar />
+    
       <div style={{ display: 'grid', gridTemplateColumns: ' auto 1fr auto ', gridTemplateRows: 'repeat(50,auto)' }}>
         <div style={{ gridRow: '1', gridColumn: '1 ' }}>
           <ProfileSideNav />

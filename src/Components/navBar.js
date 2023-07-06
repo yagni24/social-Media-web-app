@@ -9,78 +9,93 @@ import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsRounded';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import '../App.css';
+import ToggleSwitch from './toggleSwitch';
 import { NavLink } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
+import { Typography } from "@mui/material";
 function NavBar() {
     const location = useLocation();
     return (
         <>
-    
-                <div className={`${styles.navheader}`} style={{ display: 'grid', gridTemplateColumns: '1fr', justifyItems: 'center' }}>
-                    <ul className={`${styles.ul}`}>
-                        <li className={`${styles.li}`}>
-                            <div className={styles.iconButtonContainer}>
-                                <NavLink to="/homepage" activeClassName={styles.activeLink} className={styles.link}>
-                                    {location.pathname === '/homepage' || window.location.pathname === '/'? (
-                                        <>
-                                            <HomeRoundedIcon fontSize="large" color="primary" />
-                                            <hr className={styles.iconLine} />
-                                        </>
+            <div className={`${styles.navheader}`} style={{ display: 'grid', gridTemplateColumns: '1fr', justifyItems: 'center' }}>
+                <ul className={`${styles.ul}`}>
+                    <li className={`${styles.li}`}>
+                        <div className={styles.iconButtonContainer}>
+                            <NavLink to="/homepage" activeClassName={styles.activeLink} className={styles.link}>
+                                {location.pathname === '/homepage' || window.location.pathname === '/' ? (
+                                    <>
+                                        <HomeRoundedIcon fontSize="large" color="primary" />
+                                        <hr className={styles.iconLine} />
+                                    </>
 
-                                    ) : (
-                                        <HomeOutlinedIcon fontSize="large" />
-                                    )}
-                                </NavLink>
-                            </div>
-                        </li>
-                        <li className={`${styles.li}`}>
-                            <div className={styles.iconButtonContainer}>
-                                <NavLink to="/eventpage" activeClassName={styles.activeLink} className={styles.link}>
-                                    {window.location.pathname === '/eventpage' ? (
-                                        <>
-                                            <EmojiEventsRoundedIcon fontSize="large" color="primary" />
-                                            <hr className={styles.iconLine} />
-                                        </>
+                                ) : (
+                                    <HomeOutlinedIcon fontSize="large" />
+                                )}
+                            </NavLink>
+                        </div>
+                    </li>
+                    <li className={`${styles.li}`}>
+                        <div className={styles.iconButtonContainer}>
+                            <NavLink to="/eventpage" activeClassName={styles.activeLink} className={styles.link}>
+                                {window.location.pathname === '/eventpage' ? (
+                                    <>
+                                        <EmojiEventsRoundedIcon fontSize="large" color="primary" />
+                                        <hr className={styles.iconLine} />
+                                    </>
 
-                                    ) : (
-                                        <EmojiEventsOutlinedIcon fontSize="large" />
-                                    )}
-                                </NavLink>
-                            </div>
-                        </li>
-                        <li className={`${styles.li}`}>
-                            <div className={styles.iconButtonContainer}>
-                                <NavLink to="/friendspage" activeClassName={styles.activeLink} className={styles.link}>
-                                    {location.pathname === '/friendspage' ? (
-                                        <>
-                                            <GroupsRoundedIcon fontSize="large" color="primary" />
-                                            <hr className={styles.iconLine} />
-                                        </>
+                                ) : (
+                                    <EmojiEventsOutlinedIcon fontSize="large" />
+                                )}
+                            </NavLink>
+                        </div>
+                    </li>
+                    <li className={`${styles.li}`}>
+                        <div className={styles.iconButtonContainer}>
+                            <NavLink to="/friendspage" activeClassName={styles.activeLink} className={styles.link}>
+                                {location.pathname === '/friendspage' ? (
+                                    <>
+                                        <GroupsRoundedIcon fontSize="large" color="primary" />
+                                        <hr className={styles.iconLine} />
+                                    </>
 
-                                    ) : (
-                                        <GroupsOutlinedIcon fontSize="large" />
-                                    )}
-                                </NavLink>
-                            </div>
-                        </li>
-                        <li className={`${styles.li}`}>
-                            <div className={styles.iconButtonContainer}>
+                                ) : (
+                                    <GroupsOutlinedIcon fontSize="large" />
+                                )}
+                            </NavLink>
+                        </div>
+                    </li>
+                    <li className={`${styles.li}`}>
+                        <div className={styles.iconButtonContainer}>
 
-                                <NavLink to="/profile" activeClassName={styles.activeLink} className={styles.link}>
-                                    {location.pathname === '/profile' ? (
-                                        <>
-                                            <AccountCircleIcon fontSize="large" color="primary" />
-                                            <hr className={styles.iconLine} />
-                                        </>
+                            <NavLink to="/profile" activeClassName={styles.activeLink} className={styles.link}>
+                                {location.pathname === '/profile' ? (
+                                    <>
+                                        <AccountCircleIcon fontSize="large" color="primary" />
+                                        <hr className={styles.iconLine} />
+                                    </>
 
-                                    ) : (
-                                        <AccountCircleOutlinedIcon fontSize="large" />
-                                    )}
-                                </NavLink>
-                            </div>
-                        </li>
-                    </ul>
+                                ) : (
+                                    <AccountCircleOutlinedIcon fontSize="large" />
+                                )}
+                            </NavLink>
+                        </div>
+                    </li>
+                </ul>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end',alignItems:'center', position: 'absolute', left: '80%', top: '3.5%', }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '185px 100px',marginLeft:'auto',marginRight:'auto' }}>
+                        <div>
+                            <Typography style={{fontFamily:'Inter',marginTop:'5px',color:'rgb(35, 116, 225)'}}>Convert Text to Speech</Typography>
+                        </div>
+                        <div>
+                            <ToggleSwitch/>
+                        </div>
+
+                    </div>
                 </div>
+            </div>
+
         </>
     )
 }
