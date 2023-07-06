@@ -5,7 +5,7 @@ import Post from "../Components/Post"
 import ProfileSideNav from "../Components/profileSideNav";
 import RightSideNav from "../Components/rightSidenav";
 function homePage() {
-  
+
 
   return (
     <>
@@ -16,8 +16,7 @@ function homePage() {
         </div>
         <div style={{ gridRow: '1', gridColumn: '2 ' }}>
           <TextPost />
-          <Post/>
-          
+          <Post />
         </div>
         <div>
           <RightSideNav hasMarginTop={true} hasMarginRight={true} />
