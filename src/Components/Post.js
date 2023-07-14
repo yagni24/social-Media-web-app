@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
+import React, { useState,useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions } from "@mui/material";
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import styles from '../Styling/post.module.css'
-// import { fetchData } from "../Redux/Actions/postApiAction";
+import { fetchData } from "../Redux/Actions/postApiAction";
 import '../App.css';
 // import { Link } from "react-router-dom";
+import { useSpeechSynthesis } from "react-speech-kit";
 import Avatar from "@mui/material/Avatar";
 import postlogo from "../images/postlogo.png";
 import postimg from "../images/postimg.png";
@@ -20,13 +21,19 @@ const Post = () => {
     const handleStatus = () => {
         setIsFollowed(prevState => !prevState);
     }
-   
-    // const dispatch = useDispatch()
-    // const postData = useSelector((state) => state.postData.data);
-    // useEffect(() => {
-    //     dispatch(fetchData())
-    // }, [])
-    // console.log("postData:", postData);
+    const dispatch = useDispatch()
+    const { data, loading, error } = useSelector((state) => state.post);
+//    console.log("postdata:",data)
+    useEffect(() => {
+        dispatch(fetchData())
+    }, [dispatch])
+    // const { speak } = useSpeechSynthesis();
+    // const textToSpeech=(value)=>{
+    //     speak({text:value})
+    // }
+    // const handleMouseEnter=()=>{
+    //     textToSpeech('Indian Cricket Team');
+    // }
     return (
         <div style={{ position: 'absolute', top: '35%', left: '35%' }}>
             <div className={styles.card} >
@@ -40,7 +47,7 @@ const Post = () => {
                                 style={{ display: 'flex', height: '48px', width: '48px' }}
                             />
                             <div style={{ marginLeft: '20px' }}>
-                                <Typography variant="h5" style={{ fontWeight: 'bold', fontFamily: 'Inter' }}>
+                                <Typography  variant="h5" style={{ fontWeight: 'bold', fontFamily: 'Inter' }}>
                                     Indian Cricket Team
                                 </Typography>
                                 <Typography variant="subtitle1" style={{ display: 'flex', justifyContent: 'flex-start', fontFamily: 'Inter', fontSize: '12px', fontWeight: '600', letterSpacing: '0.36px', lineHeight: '16px' }}>
@@ -61,7 +68,10 @@ const Post = () => {
                     <CardActions style={{ width: 599, height: 50 }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                             {isFavorite ? (<ThumbUpIcon onClick={handleIcon} />) :
-                                (<ThumbUpOffAltIcon onClick={handleIcon} />)
+                                (<ThumbUpOffAltIcon onClick={()=>{
+                                    handleIcon();
+                                    
+                                }} />)
                             }
                             <Typography style={{ paddingLeft: '9px', fontFamily: 'Inter', fontWeight: 'bold', fontSize: '16px', paddingRight: '31px' }}>Like</Typography>
                         </div>

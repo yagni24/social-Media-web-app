@@ -17,7 +17,7 @@ const postApiReducer = createSlice({
         .addCase(fetchData.fulfilled,(state,action)=>{
             state.loading = false;
             state.data = action.payload;
-            return state.data;
+            // return state.data;
         })
         .addCase(fetchData.rejected,(state,action)=>{
             state.loading = false;
